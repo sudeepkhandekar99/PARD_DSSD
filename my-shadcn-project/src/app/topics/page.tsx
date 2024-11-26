@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 
 const topics = [
     {
@@ -119,7 +121,14 @@ function toTitleCase(text: string): string {
   return text.replace(/\w\S*/g, (word) => word.charAt(0).toUpperCase() + word.substring(1).toLowerCase());
 }
 
+
 export default function Topics() {
+  const router = useRouter();
+  const handleCardClick = (tags: string[]) => {
+    // Navigate to /projects with tags as query parameters
+    const queryString = tags.map((tag) => `tags=${encodeURIComponent(tag)}`).join("&");
+    router.push(`/projects?${queryString}`);
+  };
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
@@ -189,6 +198,7 @@ export default function Topics() {
             <div
               key={topic.id}
               className="rounded-lg shadow-lg overflow-hidden bg-white"
+              onClick={() => handleCardClick(topic.tags)}
             >
               <div className="flex items-center justify-center bg-gray-100">
                 <img
