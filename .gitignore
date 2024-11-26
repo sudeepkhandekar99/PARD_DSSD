@@ -1,2 +1,42 @@
-my-shadcn-app\node_modules
-my-shadcn-app\.next
+# Node.js
+**/node_modules/
+**/.next/
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.sqlite3
+
+# Django Migrations
+**/migrations/
+!**/migrations/__init__.py
+
+# Environment Variables
+.env
+
+# Logs
+*.log
+*.out
+*.err
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Coverage Reports
+.coverage
+coverage.xml
+htmlcov/
+
+# Build Files
+*.egg-info/
+dist/
+build/

@@ -109,18 +109,26 @@ const topics = [
       img: "/images/E_SDG-goals_icons-individual-rgb-17.png",
     },
   ];
+
 // Unique tags from all topics
 const uniqueTags = Array.from(
   new Set(topics.flatMap((topic) => topic.tags))
 );
 
 function toTitleCase(text: string): string {
-    return text.replace(/\w\S*/g, (word) => word.charAt(0).toUpperCase() + word.substring(1).toLowerCase());
-  }
-  
+  return text.replace(/\w\S*/g, (word) => word.charAt(0).toUpperCase() + word.substring(1).toLowerCase());
+}
 
 export default function Topics() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  // Filter topics based on the selected tag
+  const filteredTopics = selectedTag
+  ? topics.filter((topic) =>
+      topic.tags.some((tag) => tag.toLowerCase() === selectedTag.toLowerCase())
+    )
+  : topics;
 
   return (
     <div className="flex">
@@ -138,10 +146,21 @@ export default function Topics() {
         </button>
         <h2 className="text-xl font-bold mb-4 text-gray-800">Tags</h2>
         <div className="space-y-2">
+          <button
+            className={`w-full text-left px-3 py-2 ${
+              selectedTag === null ? "bg-blue-600 text-white" : "bg-blue-500 text-white"
+            } text-sm rounded-md hover:bg-blue-600`}
+            onClick={() => setSelectedTag(null)}
+          >
+            Show All
+          </button>
           {uniqueTags.map((tag) => (
             <button
               key={tag}
-              className="w-full text-left px-3 py-2 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600"
+              className={`w-full text-left px-3 py-2 ${
+                selectedTag === tag ? "bg-blue-600 text-white" : "bg-blue-500 text-white"
+              } text-sm rounded-md hover:bg-blue-600`}
+              onClick={() => setSelectedTag(tag)}
             >
               {toTitleCase(tag)}
             </button>
@@ -152,6 +171,7 @@ export default function Topics() {
       {/* Main Content */}
       <div className="flex-1 p-4 lg:ml-4">
         <div className="flex items-center justify-between">
+          <h1 className="text-4xl font-bold text-gray-900">Topics</h1>
           <button
             className="lg:hidden text-blue-500 font-medium"
             onClick={() => setSidebarOpen(true)}
@@ -159,8 +179,13 @@ export default function Topics() {
             Explore Tags
           </button>
         </div>
+        <p className="text-lg text-gray-600 text-center mt-4">
+          {selectedTag
+            ? `Topics related to "${toTitleCase(selectedTag)}"`
+            : "Explore various topics related to Sustainable Development Goals (SDGs)."}
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          {topics.map((topic) => (
+          {filteredTopics.map((topic) => (
             <div
               key={topic.id}
               className="rounded-lg shadow-lg overflow-hidden bg-white"
