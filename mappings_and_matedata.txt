@@ -1,0 +1,117 @@
+/                       -- skip 
+/about                  -- skip
+/how-to-contribute      -- skip
+/topics                 -- done
+/projects               
+/project-details
+/organization-list
+/organization
+
+
+const topics = [
+  {
+    id: 1,
+    title: "No Poverty",
+    description: "Access to basic human needs of health, education, sanitation",
+    tags: ["income inequality", "education", "health"],
+    img: "/images/Sustainable_Development_Goal_01NoPoverty.svg.png",
+  },
+  {
+    id: 2,
+    title: "Zero Hunger",
+    description: "Providing food relief, humanitarian relief, and sustainable food production",
+    tags: ["sustainability", "food", "health"],
+    img: "/images/E_SDG-goals_icons-individual-rgb-02.png",
+  },
+  {
+    id: 3,
+    title: "Good Health & Well-being",
+    description: "Better, more accessible health systems to increase life expectancy",
+    tags: ["health"],
+    img: "/images/E_SDG-goals_icons-individual-rgb-03.png",
+  },
+  {
+    id: 4,
+    title: "Quality Education",
+    description: "Inclusive education to enable upward social mobility and end poverty",
+    tags: ["education", "income inequality"],
+    img: "/images/E_SDG goals_icons-individual-rgb-04.png",
+  },
+  {
+    id: 5,
+    title: "Gender Equality",
+    description: "Education regardless of gender and advancement of equality laws",
+    tags: ["education", "gender"],
+    img: "/images/E_SDG-goals_icons-individual-rgb-05.png",
+  },
+  {
+    id: 6,
+    title: "Clean Water & Sanitation",
+    description: "Improving access for billions of people who lack these basic facilities",
+    tags: ["water", "income inequality", "health"],
+    img: "/images/E_SDG-goals_icons-individual-rgb-06.png",
+  },
+  {
+    id: 7,
+    title: "Affordable and Clean Energy",
+    description: "Access to renewable, safe, and available energy sources for all",
+    tags: ["sustainability", "energy"],
+    img: "/images/E_SDG-goals_icons-individual-rgb-07.png",
+  },
+  {
+    id: 8,
+    title: "Decent Work & Economic Growth",
+    description: "Creating jobs for all to improve living standards",
+    tags: ["jobs"],
+    img: "/images/E_SDG goals_icons-individual-rgb-08.png",
+  },
+  {
+    id: 9,
+    title: "Industry, Innovation, & Infrastructure",
+    description: "Generating employment and income through innovation",
+    tags: ["jobs", "infrastructure"],
+    img: "/images/E_SDG goals_icons-individual-rgb-09.png",
+  },
+  {
+    id: 10,
+    title: "Reduced Inequalities",
+    description: "Reducing income and other inequalities, within and between countries",
+    tags: ["income inequality"],
+    img: "/images/Sustainable_Development_Goal_10ReducedInequalities.svg.png",
+  },
+  {
+    id: 11,
+    title: "Sustainable Cities & Communities",
+    description: "Making cities safe, inclusive, resilient, and sustainable",
+    tags: ["sustainability", "infrastructure"],
+    img: "/images/E_SDG-goals_icons-individual-rgb-11.png",
+  },
+  {
+    id: 12,
+    title: "Climate Action",
+    description: "Regulating and reducing emissions and promoting renewable energy",
+    tags: ["sustainability", "climate"],
+    img: "/images/E_SDG-goals_icons-individual-rgb-13.png",
+  },
+  {
+    id: 13,
+    title: "Life on Land",
+    description: "Reversing man-made deforestation and desertification to sustain life on earth",
+    tags: ["sustainability", "climate"],
+    img: "/images/E_SDG goals_icons-individual-rgb-15.png",
+  },
+  {
+    id: 14,
+    title: "Peace, Justice & Strong Institutions",
+    description: "Inclusive societies, strong institutions & access to justice",
+    tags: ["peace, love, and happiness"],
+    img: "/images/E_SDG-goals_icons-individual-rgb-16.png",
+  },
+  {
+    id: 15,
+    title: "Partnerships for the Goals",
+    description: "Revitalize strong global partnerships for development",
+    tags: ["peace, love, and happiness"],
+    img: "/images/E_SDG-goals_icons-individual-rgb-17.png",
+  },
+];

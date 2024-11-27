@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core.views import get_sdg, get_projects_by_sdgs
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('get-sdg', get_sdg, name='get_sdg'),  # Without trailing slash
+    path('get-sdg/', get_sdg, name='get_sdg'),  # With trailing slash
+    path('get-projects-by-sdgs/', get_projects_by_sdgs, name='get_projects_by_sdgs'),
+    path('get-projects-by-sdgs', get_projects_by_sdgs, name='get_projects_by_sdgs'),
 ]

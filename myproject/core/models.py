@@ -112,3 +112,11 @@ class Project(models.Model):
 
     def __str__(self):
         return self.project_name
+
+
+class SDGGoal(models.Model):
+    name = models.CharField(max_length=255)  # For storing the full goal name
+    code = models.CharField(max_length=50, unique=True)  # For storing the short code (e.g., "sdg_1")
+
+    def __str__(self):
+        return self.name
